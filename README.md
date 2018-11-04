@@ -2,6 +2,8 @@ e107 Test Suites
 ===
 
 ## Quickstart
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fe107inc%2Fe107-test.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fe107inc%2Fe107-test?ref=badge_shield)
+
 
 1. Check out this repository:
    ```sh
@@ -325,3 +327,7 @@ These commands run all tests and generate a code coverage report in HTML format 
 ### Output
 
 The generated coverage reports are stored in `./tests/_output/` relative to the root of your copy of this repository.
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fe107inc%2Fe107-test.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fe107inc%2Fe107-test?ref=badge_large)
