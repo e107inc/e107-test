@@ -11,6 +11,7 @@
 namespace e107\Configuration;
 
 use Codeception\Stub\Expected;
+use e107\Configuration\Storage\ConfigurationStorageInterface;
 
 class ConfigurationTest extends \Codeception\Test\Unit
 {
@@ -58,7 +59,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 		];
 		$configuration->set('', $data);
 
-		$this->expectException(\e107\Configuration\ConfigurationKeyException::class);
+		$this->expectException(Exceptions\ConfigurationKeyException::class);
 
 		$configuration->clear('foo/bar');
 	}
@@ -174,7 +175,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 		$configuration = self::makeConfiguration();
 		$data = ['foo/nope' => 'bar'];
 
-		$this->expectException(ConfigurationValueException::class);
+		$this->expectException(Exceptions\ConfigurationValueException::class);
 
 		$configuration->populate($data);
 	}
@@ -184,7 +185,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 		$configuration = self::makeConfiguration();
 		$data = $this;
 
-		$this->expectException(ConfigurationValueException::class);
+		$this->expectException(Exceptions\ConfigurationValueException::class);
 
 		$configuration->populate($data);
 	}
@@ -249,7 +250,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 		];
 		$configuration->set('', $data);
 
-		$this->expectException(\e107\Configuration\ConfigurationKeyException::class);
+		$this->expectException(Exceptions\ConfigurationKeyException::class);
 
 		$configuration->set('foo/bar', 'value');
 	}
@@ -263,7 +264,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 			]
 		];
 
-		$this->expectException(\e107\Configuration\ConfigurationValueException::class);
+		$this->expectException(Exceptions\ConfigurationValueException::class);
 
 		$configuration->set('', $data);
 	}
@@ -277,7 +278,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 			]
 		];
 
-		$this->expectException(\e107\Configuration\ConfigurationValueException::class);
+		$this->expectException(Exceptions\ConfigurationValueException::class);
 
 		$configuration->set('', $data);
 	}
@@ -307,7 +308,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 		];
 		$configuration->set('', $data);
 
-		$this->expectException(\e107\Configuration\ConfigurationKeyException::class);
+		$this->expectException(Exceptions\ConfigurationKeyException::class);
 
 		$configuration->get('foo/bar');
 	}
@@ -392,7 +393,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 		];
 		$configuration->set('', $data);
 
-		$this->expectException(\e107\Configuration\ConfigurationKeyException::class);
+		$this->expectException(Exceptions\ConfigurationKeyException::class);
 
 		$configuration->add('foo/bar', 'anything');
 	}
@@ -406,7 +407,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 			]
 		];
 
-		$this->expectException(\e107\Configuration\ConfigurationValueException::class);
+		$this->expectException(Exceptions\ConfigurationValueException::class);
 
 		$configuration->add('', $data);
 	}
@@ -420,7 +421,7 @@ class ConfigurationTest extends \Codeception\Test\Unit
 			]
 		];
 
-		$this->expectException(\e107\Configuration\ConfigurationValueException::class);
+		$this->expectException(Exceptions\ConfigurationValueException::class);
 
 		$configuration->add('', $data);
 	}
