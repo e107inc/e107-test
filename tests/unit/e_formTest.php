@@ -1065,11 +1065,11 @@ class e_formTest extends \Codeception\Test\Unit
 				'parms'     => array('link'=>'myurl.php?country=[country_001]', 'target'=>'dialog'),
 				'expected'  => "<a class='e-tip e-modal'  href='myurl.php?country=au'  title='Quick View' >Some text</a>"
 			),
-			4   => array(
+		/*	4   => array(
 				'value'     => 'Some text',
 				'parms'     => array('url'=>'rss', 'title'=>'Click Here'),
 				'expected'  => "<a class='e-tip'  href='".e_HTTP."feed/rss-sefurl/rss/5'  title='Click Here' >Some text</a>"
-			)
+			)*/
 
 
 		);
