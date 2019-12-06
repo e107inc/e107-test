@@ -259,13 +259,33 @@
 			$res = null;
 			$this->assertTrue($res);
 		}
-
+*/
 		public function testGetScBatch()
 		{
-			$res = null;
-			$this->assertTrue($res);
-		}
 
+			$arr = array(
+				array('class'=> 'post', 'plugin'=> 'forum', 'override' => null, 'resultObj'=>'plugin_forum_post_shortcodes'), // e107_plugins/forum/shortcodes/batch/post_shortcodes.php
+				array('class'=> 'pm', 'plugin'=> true, 'override' => 'pm', 'resultObj'=>'plugin_pm_pm_shortcodes'), // e107_plugins/pm/pm_shortcodes.php
+				array('class'=> '_blank', 'plugin'=> null, 'override' => null, 'resultObj'=>'_blank_shortcodes'), // e107_plugins/_blank/e_shortcode.php
+				array('class'=> 'page', 'plugin'=> null, 'override' =>'cpage', 'resultObj'=>'cpage_shortcodes'), // e107_core/shortcodes/batch/page_shortcodes.php
+
+			);
+
+			foreach($arr as $var)
+			{
+				$obj = e107::getScBatch($var['class'], $var['plugin'], $var['override']);
+				$cls = get_class($obj);
+
+				$this->assertEquals($var['resultObj'], $cls);
+
+			}
+
+
+
+
+
+		}
+/*
 		public function testGetDb()
 		{
 			$res = null;
